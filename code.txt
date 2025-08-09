@@ -1,0 +1,46 @@
+ {
+            isActive && (
+                <div>
+{searchResults.length > 0 ? (
+        <div className="flex justify-center items-center flex-row flex-wrap p-4 gap-6 w-full">
+          {searchResults.map((item) => (
+            // <Link
+            //   href={`/${item.category}/${item.slug}`}
+            //   key={`${item.category}-${item.id}`}
+            // >
+              <div className="flex justify-center items-center flex-col shadow-lg rounded p-4 w-52 space-y-4 hover:shadow-xl transition-shadow duration-300">
+                <div className="container relative">
+                  {/* <Image
+                    src={item.image}
+                    alt={item.name}
+                    className="pic object-cover h-40 w-full"
+                  /> */}
+                </div>
+                <h1 className="font-bold text-lg mt-2 text-center">
+                  {item.name}
+                </h1>
+                <h2 className="text-red-600 font-semibold mt-2">
+                  Rs {item.price.toLocaleString()}.00
+                </h2>
+              </div>
+            // </Link>
+          ))}
+        </div>
+      ) : (
+        <div className="text-center py-10">
+          <p className="text-xl">
+            No products found matching &quot;{query}&quot;
+          </p>
+          {/* <Link */}
+            {/* href="/bats"
+            className="text-blue-600 hover:underline mt-4 inline-block"
+          > */}
+            Continue Shopping
+          {/* </Link> */}
+        </div>
+
+      )}
+ </div>
+            )
+           
+        }
